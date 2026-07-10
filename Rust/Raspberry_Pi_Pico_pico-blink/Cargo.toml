@@ -1,0 +1,17 @@
+[package]
+name = "pico2w-blink"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+embassy-executor = { version = "0.9", features = ["arch-cortex-m", "executor-thread"] }
+embassy-time = "0.5"
+embassy-rp = { version = "0.9", features = ["rp235xa", "time-driver", "critical-section-impl"] }
+cortex-m = "0.7"
+cortex-m-rt = "0.7"
+panic-halt = "0.2"
+
+[profile.release]
+debug = 2
+lto = true
+opt-level = "s"
